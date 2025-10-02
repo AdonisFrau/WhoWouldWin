@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Goku",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 9500,
+        "type": "Anime"
+    },
+    {
+        "name": "Naruto Uzumaki",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 8500,
+        "type": "Anime"
+    },
+    {
+        "name": "Lion",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 7000,
+        "type": "Animals"
+    },
+    {
+        "name": "Bald Eagle",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 6000,
+        "type": "Animals"
+    },
+    {
+        "name": "Taylor Swift",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 4000,
+        "type": "Celebrities"
+    },
+    {
+        "name": "Dwayne Johnson",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 5000,
+        "type": "Celebrities"
+    },
+    {
+        "name": "Japan",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 8000,
+        "type": "Countries"
+    },
+    {
+        "name": "Brazil",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 7500,
+        "type": "Countries"
+    },
+    {
+        "name": "Barack Obama",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 6500,
+        "type": "Politicians"
+    },
+    {
+        "name": "Angela Merkel",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 6200,
+        "type": "Politicians"
+    },
+    {
+        "name": "Sherlock Holmes",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 5500,
+        "type": "Other"
+    },
+    {
+        "name": "Santa Claus",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 9000,
+        "type": "Other"
+    },
+    {
+        "name": "SpongeBob SquarePants",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 3000,
+        "type": "Cartoons"
+    },
+    {
+        "name": "Bugs Bunny",
+        "img": "/img/Placeholder.png",
+        "powerlevel": 3500,
+        "type": "Cartoons"
+    }
+]

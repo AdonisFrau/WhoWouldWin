@@ -18,9 +18,10 @@ body {
   background: linear-gradient(
     to top left,
     rgba(118, 193, 255, 0.993),
-    rgb(1, 120, 255) 50%
+    rgb(3, 105, 221) 50%
   );
   border-radius: 16px;
+  /* background-image: url('/public/img/Placeholder.png'); */
 }
 
 #RightSide {
@@ -30,6 +31,7 @@ body {
     rgb(255, 52, 52) 50%
   );
   border-radius: 16px;
+  /* background-image: url('/public/img/Placeholder.png'); */
 }
 
 .Left_text,
@@ -40,6 +42,9 @@ body {
 
 #LeftSide,
 #RightSide {
-  margin: 8px;
+  margin: 2px;
+  /* smooth size transitions for both row (width) and column (height) layouts */
+  transition: width 220ms ease, height 220ms ease;
+  min-height: 0;
 }
 
