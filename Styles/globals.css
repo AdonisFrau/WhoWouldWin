@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles */
+.fredoka-custom {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  background-color: #000;
+  color: #ffffff;
+  font-family: 'Fredoka', sans-serif;
+}
+
+#LeftSide {
+  background: linear-gradient(
+    to top left,
+    rgba(118, 193, 255, 0.993),
+    rgb(1, 120, 255) 50%
+  );
+  border-radius: 16px;
+}
+
+#RightSide {
+  background: linear-gradient(
+    to top left,
+    rgb(255, 114, 114),
+    rgb(255, 52, 52) 50%
+  );
+  border-radius: 16px;
+}
+
+.Left_text,
+.Right_text {
+  font-size: 38px;
+  color: #ffffff;
+}
+
+#LeftSide,
+#RightSide {
+  margin: 8px;
+}
+
