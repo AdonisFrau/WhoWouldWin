@@ -60,7 +60,7 @@ export default function DeathDialog() {
             <div>
               <h3 className="text-lg font-semibold text-white">You Died</h3>
               <p className="mt-2 text-sm text-gray-300">
-                You've been defeated. For testing you can reopen this dialog from the console by calling Death() or window["Im dead"]().
+                You picked the wrong side, the opponent was way stromnger than your pick. Try again!
               </p>
             </div>
           </div>
@@ -69,9 +69,12 @@ export default function DeathDialog() {
         <div className="flex gap-3 border-t border-white/5 px-4 py-3">
           <button
             onClick={() => {
+              // Close dialog and trigger next battle if available
               setOpen(false);
+              if (typeof window.nextBattle === 'function') {
+                try { window.nextBattle(); } catch (e) { console.error(e); }
+              }
               // placeholder for respawn logic
-              // add custom behavior here if needed
             }}
             className="ml-auto inline-flex items-center rounded bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400"
           >
