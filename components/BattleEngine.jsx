@@ -72,6 +72,22 @@ export default function BattleEngine({ allowedTypes }) {
     }
   };
 
+  // utility: set the name text for a side (used when resetting)
+  const setSideName = (id, name) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+    const p = container.querySelector('p');
+    if (p) p.textContent = name ?? '';
+  };
+
+  // utility: set percent text for a side
+  const setSidePercent = (id, value) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+    const p = container.querySelector('p');
+    if (p) p.textContent = `${Math.round(value)}%`;
+  };
+
   // pick two characters based on allowed types
   const pickCharacters = () => {
     const filtered = charactersData.filter(
@@ -96,8 +112,10 @@ export default function BattleEngine({ allowedTypes }) {
     setTimeout(() => {
       updateSide('LeftSide', leftChar);
       updateSide('RightSide', rightChar);
-      // visual start 50/50
+      // visual start 50/50 and restore name text
       setFlexPercent(50);
+      setSideName('LeftSide', leftChar.name);
+      setSideName('RightSide', rightChar.name);
     }, 30);
   };
 
@@ -116,7 +134,7 @@ export default function BattleEngine({ allowedTypes }) {
       };
     }
 
-    // update name
+    // update name (initial)
     const nameEl = container.querySelector('p');
     if (nameEl) nameEl.textContent = character.name || 'Loading...';
   };
@@ -176,6 +194,9 @@ export default function BattleEngine({ allowedTypes }) {
         current = target;
         setPercent(current);
         setFlexPercent(current);
+        // update percent text to match visual while reverting to names soon
+        setSidePercent('LeftSide', current);
+        setSidePercent('RightSide', 100 - current);
         clearInterval(animIntervalRef.current);
         animIntervalRef.current = null;
         // short pause then pick new characters
@@ -184,12 +205,16 @@ export default function BattleEngine({ allowedTypes }) {
           setAnimating(false);
           setPercent(0);
           // restore responsiveness after small delay
-          setTimeout(clearInlineSizing, 80);
+          setTimeout(() => {
+            clearInlineSizing();
+          }, 80);
         }, 200);
       } else {
         current += current < target ? step : -step;
         setPercent(current);
         setFlexPercent(current);
+        setSidePercent('LeftSide', current);
+        setSidePercent('RightSide', 100 - current);
       }
     }, 12);
   }
@@ -220,17 +245,31 @@ export default function BattleEngine({ allowedTypes }) {
     const target = side === 'left' ? leftPercent : rightPercent;
     setAnimating(true);
 
+    // During animation replace names with percents
+    setSidePercent('LeftSide', 50);
+    setSidePercent('RightSide', 50);
+
     animIntervalRef.current = setInterval(() => {
       if (current < target) {
         current += 1;
         setPercent(current);
         const visualLeft = side === 'left' ? current : 100 - current;
         setFlexPercent(visualLeft);
+
+        // update both side percent displays
+        const leftDisplay = side === 'left' ? current : 100 - current;
+        const rightDisplay = 100 - leftDisplay;
+        setSidePercent('LeftSide', leftDisplay);
+        setSidePercent('RightSide', rightDisplay);
       } else {
         clearInterval(animIntervalRef.current);
         animIntervalRef.current = null;
         // Show final result and keep layout AT final percent for user to take in
         setPercent(target);
+        const finalLeft = side === 'left' ? target : 100 - target;
+        const finalRight = 100 - finalLeft;
+        setSidePercent('LeftSide', finalLeft);
+        setSidePercent('RightSide', finalRight);
         setShowingResult(true);
         setAnimating(false);
 
@@ -268,10 +307,6 @@ export default function BattleEngine({ allowedTypes }) {
     // left/right are dependencies so handlers update when characters change
   }, [left, right]);
 
-  // show percent overlay while animating or when showing result
-  return (animating || showingResult) ? (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
-      <p className="text-white text-3xl font-bold">{percent}%</p>
-    </div>
-  ) : null;
+  // no central overlay anymore — percentages are shown inside each side
+  return null;
 }

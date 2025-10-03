@@ -1,86 +1,86 @@
 [
     {
         "name": "Goku",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 9500,
+        "img": "/img/Goku.jpg",
+        "powerlevel": 950000,
         "type": "Anime"
     },
     {
         "name": "Naruto Uzumaki",
-        "img": "/img/Placeholder.png",
+        "img": "/img/Naruto.jpg",
         "powerlevel": 8500,
         "type": "Anime"
     },
     {
         "name": "Lion",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 7000,
+        "img": "/img/Lion.jpeg",
+        "powerlevel": 670,
         "type": "Animals"
     },
     {
         "name": "Bald Eagle",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 6000,
+        "img": "/img/BaldEagle.jpeg",
+        "powerlevel": 120,
         "type": "Animals"
     },
     {
         "name": "Taylor Swift",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 4000,
+        "img": "/img/TylerSwift.jpeg",
+        "powerlevel": 212,
         "type": "Celebrities"
     },
     {
         "name": "Dwayne Johnson",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 5000,
+        "img": "/img/TheRock.jpeg",
+        "powerlevel": 455,
         "type": "Celebrities"
     },
     {
         "name": "Japan",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 8000,
+        "img": "/img/japan.png",
+        "powerlevel": 80500,
         "type": "Countries"
     },
     {
         "name": "Brazil",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 7500,
+        "img": "/img/Brazil.png",
+        "powerlevel": 76500,
         "type": "Countries"
     },
     {
         "name": "Barack Obama",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 6500,
+        "img": "/img/Obama.jpeg",
+        "powerlevel": 370,
         "type": "Politicians"
     },
     {
         "name": "Angela Merkel",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 6200,
+        "img": "/img/Angela.jpg",
+        "powerlevel": 223,
         "type": "Politicians"
     },
     {
         "name": "Sherlock Holmes",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 5500,
+        "img": "/img/Sherlock.jpeg",
+        "powerlevel": 325,
         "type": "Other"
     },
     {
         "name": "Santa Claus",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 9000,
+        "img": "/img/Santa.jpg",
+        "powerlevel": 1200,
         "type": "Other"
     },
     {
         "name": "SpongeBob SquarePants",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 3000,
+        "img": "/img/Spongebob.jpeg",
+        "powerlevel": 22,
         "type": "Cartoons"
     },
     {
         "name": "Bugs Bunny",
-        "img": "/img/Placeholder.png",
-        "powerlevel": 3500,
+        "img": "/img/BugsBunny.jpeg",
+        "powerlevel": 54,
         "type": "Cartoons"
     }
 ]
