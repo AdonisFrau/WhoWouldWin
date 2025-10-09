@@ -14,37 +14,94 @@ body {
   font-family: 'Fredoka', sans-serif;
 }
 
-#LeftSide {
-  background: linear-gradient(
-    to top left,
-    rgba(118, 193, 255, 0.993),
-    rgb(3, 105, 221) 50%
-  );
-  border-radius: 16px;
-  /* background-image: url('/public/img/Placeholder.png'); */
-}
-
-#RightSide {
-  background: linear-gradient(
-    to top left,
-    rgb(255, 114, 114),
-    rgb(255, 52, 52) 50%
-  );
-  border-radius: 16px;
-  /* background-image: url('/public/img/Placeholder.png'); */
-}
-
-.Left_text,
-.Right_text {
-  font-size: 38px;
-  color: #ffffff;
-}
-
+/* Smoother transitions and polished visuals for battle sides */
 #LeftSide,
 #RightSide {
-  margin: 2px;
-  /* smooth size transitions for both row (width) and column (height) layouts */
-  transition: width 220ms ease, height 220ms ease;
+  margin: 0 2px;
+  /* longer, smoother transition with custom easing */
+  transition: width 380ms cubic-bezier(.22,.98,.36,1), height 380ms cubic-bezier(.22,.98,.36,1), box-shadow 300ms ease, transform 300ms ease;
+  will-change: width, height, transform, box-shadow;
   min-height: 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+/* subtle overlay to darken backgrounds for readability */
+#LeftSide::before,
+#RightSide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15), rgba(0,0,0,0.06));
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+/* foreground text container */
+#LeftSide p,
+#RightSide p {
+  position: relative;
+  z-index: 10;
+  transform-origin: center;
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1), opacity 250ms ease;
+  opacity: 1;
+  font-weight: 555;
+  font-size: 2.2rem; /* ~20% larger than typical 1rem */
+  line-height: 1.05;
+  
+}
+
+/* when animating, slightly lift winner and dim loser */
+#LeftSide.winner,
+#RightSide.winner {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.35);
+}
+
+#LeftSide.loser,
+#RightSide.loser {
+  transform: translateY(0) scale(0.995);
+  filter: saturate(0.85) brightness(0.9);
+  box-shadow: none;
+  opacity: 1;
+}
+
+/* animate the number/name pop effect while percentages change */
+#LeftSide.animating p,
+#RightSide.animating p {
+  transform: scale(1.04);
+  opacity: 0.98;
+}
+
+/* subtle pulse on percent change */
+@keyframes subtlePulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.98; }
+  100% { transform: scale(1); opacity: 1; }
+}
+#LeftSide.animating p,
+#RightSide.animating p {
+  animation: subtlePulse 420ms ease;
+}
+
+/* ensure images remain behind and cover */
+#LeftSide img,
+#RightSide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 420ms cubic-bezier(.22,.98,.36,1), filter 300ms ease;
+}
+
+/* darker image when loser */
+#LeftSide.loser img,
+#RightSide.loser img {
+  transform: scale(1.03);
+  filter: brightness(0.85) saturate(0.9);
 }
 

@@ -13,7 +13,9 @@ export default function BattleEngine({ allowedTypes }) {
   const animIntervalRef = useRef(null);
   const nextTimeoutRef = useRef(null);
   const deathTimeoutRef = useRef(null);
+  const animFrameRef = useRef(null);
 
+  // helper: set width (row) or height (column) percent with a transition
   const setFlexPercent = (value) => {
     const leftDiv = document.getElementById('LeftSide');
     const rightDiv = document.getElementById('RightSide');
@@ -22,6 +24,10 @@ export default function BattleEngine({ allowedTypes }) {
     const parent = leftDiv.parentElement;
     const parentStyle = parent ? getComputedStyle(parent) : null;
     const isColumn = parentStyle?.flexDirection?.startsWith('column');
+
+    // add animating class so CSS can apply text pulsing, etc.
+    leftDiv.classList.add('animating');
+    rightDiv.classList.add('animating');
 
     const trans = 'width 220ms ease, height 220ms ease';
     leftDiv.style.transition = trans;
@@ -44,8 +50,35 @@ export default function BattleEngine({ allowedTypes }) {
       rightDiv.style.height = '';
       if (parent) parent.style.height = '';
     }
+
+    // remove the animating class after the transition completes
+    window.clearTimeout(leftDiv.__animTimeout);
+    leftDiv.__animTimeout = window.setTimeout(() => {
+      leftDiv.classList.remove('animating');
+      rightDiv.classList.remove('animating');
+    }, 420);
   };
 
+  // helper to mark winner/loser visuals
+  const applyVisualState = (finalLeftPercent) => {
+    const leftDiv = document.getElementById('LeftSide');
+    const rightDiv = document.getElementById('RightSide');
+    if (!leftDiv || !rightDiv) return;
+
+    // remove previous states
+    leftDiv.classList.remove('winner', 'loser');
+    rightDiv.classList.remove('winner', 'loser');
+
+    if (finalLeftPercent > 50) {
+      leftDiv.classList.add('winner');
+      rightDiv.classList.add('loser');
+    } else if (finalLeftPercent < 50) {
+      leftDiv.classList.add('loser');
+      rightDiv.classList.add('winner');
+    } // exact 50 -> no winner class
+  };
+
+  // cleanup function to remove inline sizing and transitions
   const clearInlineSizing = () => {
     const leftDiv = document.getElementById('LeftSide');
     const rightDiv = document.getElementById('RightSide');
@@ -55,12 +88,16 @@ export default function BattleEngine({ allowedTypes }) {
       leftDiv.style.width = '';
       leftDiv.style.height = '';
       leftDiv.style.flex = '';
+      leftDiv.classList.remove('animating', 'winner', 'loser');
+      window.clearTimeout(leftDiv.__animTimeout);
     }
     if (rightDiv) {
       rightDiv.style.transition = '';
       rightDiv.style.width = '';
       rightDiv.style.height = '';
       rightDiv.style.flex = '';
+      rightDiv.classList.remove('animating', 'winner', 'loser');
+      window.clearTimeout(rightDiv.__animTimeout);
     }
     if (parent) {
       parent.style.height = '';
@@ -192,7 +229,7 @@ export default function BattleEngine({ allowedTypes }) {
           setAnimating(false);
           setPercent(0);
           setTimeout(() => {
-            clearInlineSizing();
+            clearInlineSizing(); // this now also removes winner/loser classes
           }, 80);
         }, 200);
       } else {
@@ -217,6 +254,10 @@ export default function BattleEngine({ allowedTypes }) {
       clearInterval(animIntervalRef.current);
       animIntervalRef.current = null;
     }
+    if (animFrameRef.current) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
     if (deathTimeoutRef.current) {
       clearTimeout(deathTimeoutRef.current);
       deathTimeoutRef.current = null;
@@ -230,7 +271,7 @@ export default function BattleEngine({ allowedTypes }) {
     const winner = leftPower >= rightPower ? 'left' : 'right';
     setResult(winner);
 
-    let current = 50;
+    const startPercent = 50;
     const target = side === 'left' ? leftPercent : rightPercent;
     setAnimating(true);
 
@@ -238,38 +279,41 @@ export default function BattleEngine({ allowedTypes }) {
     setSidePercent('LeftSide', 50);
     setSidePercent('RightSide', 50);
 
-    // replace this animIntervalRef.current = setInterval(...) block inside handlePick
-    const direction = target > 50 ? 1 : -1;
-    animIntervalRef.current = setInterval(() => {
-      // continue moving current toward target in either direction
-      if ((direction === 1 && current < target) || (direction === -1 && current > target)) {
-        current += direction;
-        setPercent(current);
-        const visualLeft = side === 'left' ? current : 100 - current;
-        setFlexPercent(visualLeft);
+    // easing helper - exponential easeOut
+    const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+    const duration = 700; // ms, adjust for faster/slower overall feel
+    let startTime = null;
 
-        const leftDisplay = side === 'left' ? current : 100 - current;
-        const rightDisplay = 100 - leftDisplay;
-        setSidePercent('LeftSide', leftDisplay);
-        setSidePercent('RightSide', rightDisplay);
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const elapsed = ts - startTime;
+      const t = Math.min(1, elapsed / duration);
+      const eased = easeOutExpo(t);
+      // interpolate from startPercent -> target using eased value
+      const current = startPercent + (target - startPercent) * eased;
+      setPercent(Math.round(current));
+      const visualLeft = side === 'left' ? current : 100 - current;
+      setFlexPercent(visualLeft);
+      const leftDisplay = Math.round(side === 'left' ? current : 100 - current);
+      const rightDisplay = 100 - leftDisplay;
+      setSidePercent('LeftSide', leftDisplay);
+      setSidePercent('RightSide', rightDisplay);
+
+      if (t < 1) {
+        animFrameRef.current = requestAnimationFrame(step);
       } else {
-        // reached target (or target was on the other side); ensure final sizing is applied
-        clearInterval(animIntervalRef.current);
-        animIntervalRef.current = null;
-
+        // finished
+        animFrameRef.current = null;
         setPercent(target);
         const finalLeft = side === 'left' ? target : 100 - target;
         const finalRight = 100 - finalLeft;
-
-        // make sure the visual sizing is applied for the final state
         setFlexPercent(finalLeft);
         setSidePercent('LeftSide', finalLeft);
         setSidePercent('RightSide', finalRight);
-
+        applyVisualState(finalLeft);
         setShowingResult(true);
         setAnimating(false);
 
-        // if user picked the weaker side, show Death dialog after 4s
         if (side !== winner) {
           deathTimeoutRef.current = setTimeout(() => {
             if (typeof window.Death === 'function') window.Death();
@@ -277,12 +321,14 @@ export default function BattleEngine({ allowedTypes }) {
           }, 4000);
         }
 
-        // schedule next battle after 10s regardless
         nextTimeoutRef.current = setTimeout(() => {
           nextBattle();
         }, 10000);
       }
-    }, 10);
+    };
+
+    // start RAF animation
+    animFrameRef.current = requestAnimationFrame(step);
 
     // do NOT call Death immediately here; it's scheduled above after result
     if (side !== winner) {
