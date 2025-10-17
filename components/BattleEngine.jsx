@@ -132,18 +132,28 @@ export default function BattleEngine({ allowedTypes }) {
       rightChar = filtered[Math.floor(Math.random() * filtered.length)];
     } while (rightChar.name === leftChar.name);
 
-    setLeft(leftChar);
-    setRight(rightChar);
+    // apply mutation logic based on power levels
+    const [mutLeft, mutRight] = applyMutationIfNeeded(leftChar, rightChar);
+    setLeft(mutLeft);
+    setRight(mutRight);
     setResult(null);
     setPercent(0);
     setShowingResult(false);
 
     setTimeout(() => {
-      updateSide('LeftSide', leftChar);
-      updateSide('RightSide', rightChar);
+      updateSide('LeftSide', mutLeft);
+      updateSide('RightSide', mutRight);
       setFlexPercent(50);
-      setSideName('LeftSide', leftChar.name);
-      setSideName('RightSide', rightChar.name);
+
+      const leftDisplayName = mutLeft.mutatedCount
+        ? `${mutLeft.mutatedCount} of ${mutLeft.name}'s`
+        : mutLeft.name;
+      const rightDisplayName = mutRight.mutatedCount
+        ? `${mutRight.mutatedCount} of ${mutRight.name}'s`
+        : mutRight.name;
+
+      setSideName('LeftSide', leftDisplayName);
+      setSideName('RightSide', rightDisplayName);
     }, 30);
   };
 
@@ -161,7 +171,13 @@ export default function BattleEngine({ allowedTypes }) {
     }
 
     const nameEl = container.querySelector('p');
-    if (nameEl) nameEl.textContent = character.name || 'Loading...';
+    if (nameEl) {
+      if (character.mutatedCount) {
+        nameEl.textContent = `${character.mutatedCount} of ${character.name}'s`;
+      } else {
+        nameEl.textContent = character.name || 'Loading...';
+      }
+    }
   };
 
   useEffect(() => {
@@ -263,8 +279,8 @@ export default function BattleEngine({ allowedTypes }) {
       deathTimeoutRef.current = null;
     }
 
-    const leftPower = left.powerlevel;
-    const rightPower = right.powerlevel;
+    const leftPower = left?.effectivePower ?? left?.powerlevel ?? 0;
+    const rightPower = right?.effectivePower ?? right?.powerlevel ?? 0;
     const leftPercent = calculatePercent(leftPower, rightPower);
     const rightPercent = 100 - leftPercent;
 
@@ -357,3 +373,53 @@ export default function BattleEngine({ allowedTypes }) {
   // no central overlay anymore — percentages are shown inside each side
   return null;
 }
+
+// Helper: given two powers, maybe mutate the weaker side into many copies
+const applyMutationIfNeeded = (aChar, bChar) => {
+  const A = { ...aChar };
+  const B = { ...bChar };
+
+  const a = Number(A.powerlevel) || 0;
+  const b = Number(B.powerlevel) || 0;
+  const THRESHOLD = 1000;
+
+  const niceRound = (n) => {
+    const bases = [1, 2, 5];
+    const mags = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
+    let best = 1;
+    let bestDiff = Infinity;
+    for (const m of mags) {
+      for (const b of bases) {
+        const candidate = b * m;
+        const diff = Math.abs(candidate - n);
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          best = candidate;
+        }
+      }
+    }
+    return best;
+  };
+
+  if (a >= b * THRESHOLD) {
+    const rawMultiplier = a / Math.max(1, b);
+    const multiplier = niceRound(rawMultiplier);
+    B.effectivePower = B.powerlevel * multiplier;
+    B.mutatedCount = multiplier;
+    A.effectivePower = A.powerlevel;
+    return [A, B];
+  }
+
+  if (b >= a * THRESHOLD) {
+    const rawMultiplier = b / Math.max(1, a);
+    const multiplier = niceRound(rawMultiplier);
+    A.effectivePower = A.powerlevel * multiplier;
+    A.mutatedCount = multiplier;
+    B.effectivePower = B.powerlevel;
+    return [A, B];
+  }
+
+  A.effectivePower = A.powerlevel;
+  B.effectivePower = B.powerlevel;
+  return [A, B];
+};

@@ -183,106 +183,606 @@
     { "name": "Makima", "img": "/img/Makima.jpg", "powerlevel": 450000, "type": "Anime" },
 
 
-    { "name": "The entire country of United States", "img": "/img/United_States.jpg", "powerlevel": 33000000, "type": "Countries" },
-    { "name": "The entire country of China", "img": "/img/China.jpg", "powerlevel": 25000000, "type": "Countries" },
-    { "name": "The entire country of India", "img": "/img/India.jpg", "powerlevel": 15000000, "type": "Countries" },
-    { "name": "The entire country of Russia", "img": "/img/Russia.jpg", "powerlevel": 12000000, "type": "Countries" },
-    { "name": "The entire country of Germany", "img": "/img/Germany.jpg", "powerlevel": 9000000, "type": "Countries" },
-    { "name": "The entire country of United Kingdom", "img": "/img/United_Kingdom.jpg", "powerlevel": 8500000, "type": "Countries" },
-    { "name": "The entire country of France", "img": "/img/France.jpg", "powerlevel": 8300000, "type": "Countries" },
-    { "name": "The entire country of Japan", "img": "/img/Japan.jpg", "powerlevel": 8000000, "type": "Countries" },
-    { "name": "The entire country of Canada", "img": "/img/Canada.jpg", "powerlevel": 5000000, "type": "Countries" },
-    { "name": "The entire country of Brazil", "img": "/img/Brazil.jpg", "powerlevel": 4800000, "type": "Countries" },
-    { "name": "The entire country of Italy", "img": "/img/Italy.jpg", "powerlevel": 4500000, "type": "Countries" },
-    { "name": "The entire country of South Korea", "img": "/img/South_Korea.jpg", "powerlevel": 4300000, "type": "Countries" },
-    { "name": "The entire country of Australia", "img": "/img/Australia.jpg", "powerlevel": 4100000, "type": "Countries" },
-    { "name": "The entire country of Spain", "img": "/img/Spain.jpg", "powerlevel": 3800000, "type": "Countries" },
-    { "name": "The entire country of Mexico", "img": "/img/Mexico.jpg", "powerlevel": 3500000, "type": "Countries" },
-    { "name": "The entire country of Turkey", "img": "/img/Turkey.jpg", "powerlevel": 3200000, "type": "Countries" },
-    { "name": "The entire country of Saudi Arabia", "img": "/img/Saudi_Arabia.jpg", "powerlevel": 3000000, "type": "Countries" },
-    { "name": "The entire country of Netherlands", "img": "/img/Netherlands.jpg", "powerlevel": 2800000, "type": "Countries" },
-    { "name": "The entire country of Switzerland", "img": "/img/Switzerland.jpg", "powerlevel": 2600000, "type": "Countries" },
-    { "name": "The entire country of Sweden", "img": "/img/Sweden.jpg", "powerlevel": 2400000, "type": "Countries" },
-    { "name": "The entire country of Poland", "img": "/img/Poland.jpg", "powerlevel": 2000000, "type": "Countries" },
-    { "name": "The entire country of Indonesia", "img": "/img/Indonesia.jpg", "powerlevel": 1800000, "type": "Countries" },
-    { "name": "The entire country of Iran", "img": "/img/Iran.jpg", "powerlevel": 1700000, "type": "Countries" },
-    { "name": "The entire country of Argentina", "img": "/img/Argentina.jpg", "powerlevel": 1600000, "type": "Countries" },
-    { "name": "The entire country of Belgium", "img": "/img/Belgium.jpg", "powerlevel": 1500000, "type": "Countries" },
-    { "name": "The entire country of Norway", "img": "/img/Norway.jpg", "powerlevel": 1400000, "type": "Countries" },
-    { "name": "The entire country of United Arab Emirates", "img": "/img/United_Arab_Emirates.jpg", "powerlevel": 1350000, "type": "Countries" },
-    { "name": "The entire country of Israel", "img": "/img/Israel.jpg", "powerlevel": 1300000, "type": "Countries" },
-    { "name": "The entire country of South Africa", "img": "/img/South_Africa.jpg", "powerlevel": 1250000, "type": "Countries" },
-    { "name": "The entire country of Thailand", "img": "/img/Thailand.jpg", "powerlevel": 1200000, "type": "Countries" },
-    { "name": "The entire country of Egypt", "img": "/img/Egypt.jpg", "powerlevel": 1150000, "type": "Countries" },
-    { "name": "The entire country of Denmark", "img": "/img/Denmark.jpg", "powerlevel": 1100000, "type": "Countries" },
-    { "name": "The entire country of Singapore", "img": "/img/Singapore.jpg", "powerlevel": 1050000, "type": "Countries" },
-    { "name": "The entire country of Malaysia", "img": "/img/Malaysia.jpg", "powerlevel": 1000000, "type": "Countries" },
-    { "name": "The entire country of Colombia", "img": "/img/Colombia.jpg", "powerlevel": 950000, "type": "Countries" },
-    { "name": "The entire country of Pakistan", "img": "/img/Pakistan.jpg", "powerlevel": 900000, "type": "Countries" },
-    { "name": "The entire country of Philippines", "img": "/img/Philippines.jpg", "powerlevel": 880000, "type": "Countries" },
-    { "name": "The entire country of Vietnam", "img": "/img/Vietnam.jpg", "powerlevel": 860000, "type": "Countries" },
-    { "name": "The entire country of Chile", "img": "/img/Chile.jpg", "powerlevel": 820000, "type": "Countries" },
-    { "name": "The entire country of Peru", "img": "/img/Peru.jpg", "powerlevel": 800000, "type": "Countries" },
-    { "name": "The entire country of Bangladesh", "img": "/img/Bangladesh.jpg", "powerlevel": 780000, "type": "Countries" },
-    { "name": "The entire country of Finland", "img": "/img/Finland.jpg", "powerlevel": 760000, "type": "Countries" },
-    { "name": "The entire country of Greece", "img": "/img/Greece.jpg", "powerlevel": 740000, "type": "Countries" },
-    { "name": "The entire country of Portugal", "img": "/img/Portugal.jpg", "powerlevel": 720000, "type": "Countries" },
-    { "name": "The entire country of Romania", "img": "/img/Romania.jpg", "powerlevel": 700000, "type": "Countries" },
-    { "name": "The entire country of Czech Republic", "img": "/img/Czech_Republic.jpg", "powerlevel": 680000, "type": "Countries" },
-    { "name": "The entire country of Hungary", "img": "/img/Hungary.jpg", "powerlevel": 660000, "type": "Countries" },
-    { "name": "The entire country of New Zealand", "img": "/img/New_Zealand.jpg", "powerlevel": 640000, "type": "Countries" },
-    { "name": "The entire country of Algeria", "img": "/img/Algeria.jpg", "powerlevel": 620000, "type": "Countries" },
-    { "name": "The entire country of Kazakhstan", "img": "/img/Kazakhstan.jpg", "powerlevel": 600000, "type": "Countries" },
-    { "name": "The entire country of Iraq", "img": "/img/Iraq.jpg", "powerlevel": 580000, "type": "Countries" },
-    { "name": "The entire country of Morocco", "img": "/img/Morocco.jpg", "powerlevel": 560000, "type": "Countries" },
-    { "name": "The entire country of Qatar", "img": "/img/Qatar.jpg", "powerlevel": 540000, "type": "Countries" },
-    { "name": "The entire country of Kuwait", "img": "/img/Kuwait.jpg", "powerlevel": 520000, "type": "Countries" },
-    { "name": "The entire country of Ecuador", "img": "/img/Ecuador.jpg", "powerlevel": 500000, "type": "Countries" },
-    { "name": "The entire country of Angola", "img": "/img/Angola.jpg", "powerlevel": 480000, "type": "Countries" },
-    { "name": "The entire country of Uzbekistan", "img": "/img/Uzbekistan.jpg", "powerlevel": 460000, "type": "Countries" },
-    { "name": "The entire country of Belarus", "img": "/img/Belarus.jpg", "powerlevel": 440000, "type": "Countries" },
-    { "name": "The entire country of Dominican Republic", "img": "/img/Dominican_Republic.jpg", "powerlevel": 420000, "type": "Countries" },
-    { "name": "The entire country of Sri Lanka", "img": "/img/Sri_Lanka.jpg", "powerlevel": 400000, "type": "Countries" },
-    { "name": "The entire country of Serbia", "img": "/img/Serbia.jpg", "powerlevel": 380000, "type": "Countries" },
-    { "name": "The entire country of Kenya", "img": "/img/Kenya.jpg", "powerlevel": 360000, "type": "Countries" },
-    { "name": "The entire country of Uganda", "img": "/img/Uganda.jpg", "powerlevel": 340000, "type": "Countries" },
-    { "name": "The entire country of Myanmar", "img": "/img/Myanmar.jpg", "powerlevel": 320000, "type": "Countries" },
-    { "name": "The entire country of Yemen", "img": "/img/Yemen.jpg", "powerlevel": 300000, "type": "Countries" },
-    { "name": "The entire country of Libya", "img": "/img/Libya.jpg", "powerlevel": 280000, "type": "Countries" },
-    { "name": "The entire country of Bolivia", "img": "/img/Bolivia.jpg", "powerlevel": 260000, "type": "Countries" },
-    { "name": "The entire country of Paraguay", "img": "/img/Paraguay.jpg", "powerlevel": 240000, "type": "Countries" },
-    { "name": "The entire country of Slovenia", "img": "/img/Slovenia.jpg", "powerlevel": 220000, "type": "Countries" },
-    { "name": "The entire country of Croatia", "img": "/img/Croatia.jpg", "powerlevel": 200000, "type": "Countries" },
-    { "name": "The entire country of Lithuania", "img": "/img/Lithuania.jpg", "powerlevel": 190000, "type": "Countries" },
-    { "name": "The entire country of Slovakia", "img": "/img/Slovakia.jpg", "powerlevel": 180000, "type": "Countries" },
-    { "name": "The entire country of Bahrain", "img": "/img/Bahrain.jpg", "powerlevel": 185000, "type": "Countries" },
-    { "name": "The entire country of Honduras", "img": "/img/Honduras.jpg", "powerlevel": 180000, "type": "Countries" },
-    { "name": "The entire country of Nicaragua", "img": "/img/Nicaragua.jpg", "powerlevel": 175000, "type": "Countries" },
-    { "name": "The entire country of El Salvador", "img": "/img/El_Salvador.jpg", "powerlevel": 170000, "type": "Countries" },
-    { "name": "The entire country of Cambodia", "img": "/img/Cambodia.jpg", "powerlevel": 165000, "type": "Countries" },
-    { "name": "The entire country of Nepal", "img": "/img/Nepal.jpg", "powerlevel": 160000, "type": "Countries" },
-    { "name": "The entire country of Tajikistan", "img": "/img/Tajikistan.jpg", "powerlevel": 155000, "type": "Countries" },
-    { "name": "The entire country of Kyrgyzstan", "img": "/img/Kyrgyzstan.jpg", "powerlevel": 150500, "type": "Countries" },
-    { "name": "The entire country of Mongolia", "img": "/img/Mongolia.jpg", "powerlevel": 145000, "type": "Countries" },
-    { "name": "The entire country of Albania", "img": "/img/Albania.jpg", "powerlevel": 142000, "type": "Countries" },
-    { "name": "The entire country of Latvia", "img": "/img/Latvia.jpg", "powerlevel": 140500, "type": "Countries" },
-    { "name": "The entire country of Estonia", "img": "/img/Estonia.jpg", "powerlevel": 140000, "type": "Countries" },
-    { "name": "The entire country of Cyprus", "img": "/img/Cyprus.jpg", "powerlevel": 135500, "type": "Countries" },
-    { "name": "The entire country of Luxembourg", "img": "/img/Luxembourg.jpg", "powerlevel": 134000, "type": "Countries" },
-    { "name": "The entire country of Malta", "img": "/img/Malta.jpg", "powerlevel": 133000, "type": "Countries" },
-    { "name": "The entire country of Iceland", "img": "/img/Iceland.jpg", "powerlevel": 132000, "type": "Countries" },
-    { "name": "The entire country of Montenegro", "img": "/img/Montenegro.jpg", "powerlevel": 131000, "type": "Countries" },
-    { "name": "The entire country of Botswana", "img": "/img/Botswana.jpg", "powerlevel": 130500, "type": "Countries" },
-    { "name": "The entire country of Namibia", "img": "/img/Namibia.jpg", "powerlevel": 130000, "type": "Countries" },
-    { "name": "The entire country of Zimbabwe", "img": "/img/Zimbabwe.jpg", "powerlevel": 129000, "type": "Countries" },
-    { "name": "The entire country of Mauritius", "img": "/img/Mauritius.jpg", "powerlevel": 128500, "type": "Countries" },
-    { "name": "The entire country of Fiji", "img": "/img/Fiji.jpg", "powerlevel": 128000, "type": "Countries" },
-    { "name": "The entire country of Papua New Guinea", "img": "/img/Papua_New_Guinea.jpg", "powerlevel": 127500, "type": "Countries" },
-    { "name": "The entire country of Jamaica", "img": "/img/Jamaica.jpg", "powerlevel": 127000, "type": "Countries" },
-    { "name": "The entire country of Bahamas", "img": "/img/Bahamas.jpg", "powerlevel": 126500, "type": "Countries" },
-    { "name": "The entire country of Trinidad and Tobago", "img": "/img/Trinidad_and_Tobago.jpg", "powerlevel": 126000, "type": "Countries" },
-    { "name": "The entire country of Barbados", "img": "/img/Barbados.jpg", "powerlevel": 125500, "type": "Countries" },
-    { "name": "The entire country of Belize", "img": "/img/Belize.jpg", "powerlevel": 125000, "type": "Countries" },
+    {
+        "name": "The entire country of United States",
+        "img": "/img/United_States.jpg",
+        "powerlevel": 3300000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of China",
+        "img": "/img/China.jpg",
+        "powerlevel": 2500000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of India",
+        "img": "/img/India.jpg",
+        "powerlevel": 1500000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Russia",
+        "img": "/img/Russia.jpg",
+        "powerlevel": 1200000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Germany",
+        "img": "/img/Germany.jpg",
+        "powerlevel": 900000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of United Kingdom",
+        "img": "/img/United_Kingdom.jpg",
+        "powerlevel": 850000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of France",
+        "img": "/img/France.jpg",
+        "powerlevel": 830000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Japan",
+        "img": "/img/Japan.jpg",
+        "powerlevel": 800000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Canada",
+        "img": "/img/Canada.jpg",
+        "powerlevel": 500000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Brazil",
+        "img": "/img/Brazil.jpg",
+        "powerlevel": 480000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Italy",
+        "img": "/img/Italy.jpg",
+        "powerlevel": 450000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of South Korea",
+        "img": "/img/South_Korea.jpg",
+        "powerlevel": 430000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Australia",
+        "img": "/img/Australia.jpg",
+        "powerlevel": 410000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Spain",
+        "img": "/img/Spain.jpg",
+        "powerlevel": 380000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Mexico",
+        "img": "/img/Mexico.jpg",
+        "powerlevel": 350000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Turkey",
+        "img": "/img/Turkey.jpg",
+        "powerlevel": 320000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Saudi Arabia",
+        "img": "/img/Saudi_Arabia.jpg",
+        "powerlevel": 300000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Netherlands",
+        "img": "/img/Netherlands.jpg",
+        "powerlevel": 280000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Switzerland",
+        "img": "/img/Switzerland.jpg",
+        "powerlevel": 260000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Sweden",
+        "img": "/img/Sweden.jpg",
+        "powerlevel": 240000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Poland",
+        "img": "/img/Poland.jpg",
+        "powerlevel": 200000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Indonesia",
+        "img": "/img/Indonesia.jpg",
+        "powerlevel": 180000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Iran",
+        "img": "/img/Iran.jpg",
+        "powerlevel": 170000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Argentina",
+        "img": "/img/Argentina.jpg",
+        "powerlevel": 160000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Belgium",
+        "img": "/img/Belgium.jpg",
+        "powerlevel": 150000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Norway",
+        "img": "/img/Norway.jpg",
+        "powerlevel": 140000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of United Arab Emirates",
+        "img": "/img/United_Arab_Emirates.jpg",
+        "powerlevel": 135000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Israel",
+        "img": "/img/Israel.jpg",
+        "powerlevel": 130000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of South Africa",
+        "img": "/img/South_Africa.jpg",
+        "powerlevel": 125000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Thailand",
+        "img": "/img/Thailand.jpg",
+        "powerlevel": 120000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Egypt",
+        "img": "/img/Egypt.jpg",
+        "powerlevel": 115000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Denmark",
+        "img": "/img/Denmark.jpg",
+        "powerlevel": 110000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Singapore",
+        "img": "/img/Singapore.jpg",
+        "powerlevel": 105000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Malaysia",
+        "img": "/img/Malaysia.jpg",
+        "powerlevel": 100000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Colombia",
+        "img": "/img/Colombia.jpg",
+        "powerlevel": 95000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Pakistan",
+        "img": "/img/Pakistan.jpg",
+        "powerlevel": 90000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Philippines",
+        "img": "/img/Philippines.jpg",
+        "powerlevel": 88000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Vietnam",
+        "img": "/img/Vietnam.jpg",
+        "powerlevel": 86000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Chile",
+        "img": "/img/Chile.jpg",
+        "powerlevel": 82000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Peru",
+        "img": "/img/Peru.jpg",
+        "powerlevel": 80000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Bangladesh",
+        "img": "/img/Bangladesh.jpg",
+        "powerlevel": 78000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Finland",
+        "img": "/img/Finland.jpg",
+        "powerlevel": 76000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Greece",
+        "img": "/img/Greece.jpg",
+        "powerlevel": 74000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Portugal",
+        "img": "/img/Portugal.jpg",
+        "powerlevel": 72000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Romania",
+        "img": "/img/Romania.jpg",
+        "powerlevel": 70000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Czech Republic",
+        "img": "/img/Czech_Republic.jpg",
+        "powerlevel": 68000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Hungary",
+        "img": "/img/Hungary.jpg",
+        "powerlevel": 66000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of New Zealand",
+        "img": "/img/New_Zealand.jpg",
+        "powerlevel": 64000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Algeria",
+        "img": "/img/Algeria.jpg",
+        "powerlevel": 62000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Kazakhstan",
+        "img": "/img/Kazakhstan.jpg",
+        "powerlevel": 60000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Iraq",
+        "img": "/img/Iraq.jpg",
+        "powerlevel": 58000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Morocco",
+        "img": "/img/Morocco.jpg",
+        "powerlevel": 56000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Qatar",
+        "img": "/img/Qatar.jpg",
+        "powerlevel": 54000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Kuwait",
+        "img": "/img/Kuwait.jpg",
+        "powerlevel": 52000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Ecuador",
+        "img": "/img/Ecuador.jpg",
+        "powerlevel": 50000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Angola",
+        "img": "/img/Angola.jpg",
+        "powerlevel": 48000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Uzbekistan",
+        "img": "/img/Uzbekistan.jpg",
+        "powerlevel": 46000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Belarus",
+        "img": "/img/Belarus.jpg",
+        "powerlevel": 44000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Dominican Republic",
+        "img": "/img/Dominican_Republic.jpg",
+        "powerlevel": 42000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Sri Lanka",
+        "img": "/img/Sri_Lanka.jpg",
+        "powerlevel": 40000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Serbia",
+        "img": "/img/Serbia.jpg",
+        "powerlevel": 38000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Kenya",
+        "img": "/img/Kenya.jpg",
+        "powerlevel": 36000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Uganda",
+        "img": "/img/Uganda.jpg",
+        "powerlevel": 34000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Myanmar",
+        "img": "/img/Myanmar.jpg",
+        "powerlevel": 32000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Yemen",
+        "img": "/img/Yemen.jpg",
+        "powerlevel": 30000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Libya",
+        "img": "/img/Libya.jpg",
+        "powerlevel": 28000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Bolivia",
+        "img": "/img/Bolivia.jpg",
+        "powerlevel": 26000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Paraguay",
+        "img": "/img/Paraguay.jpg",
+        "powerlevel": 24000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Slovenia",
+        "img": "/img/Slovenia.jpg",
+        "powerlevel": 22000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Croatia",
+        "img": "/img/Croatia.jpg",
+        "powerlevel": 20000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Lithuania",
+        "img": "/img/Lithuania.jpg",
+        "powerlevel": 19000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Slovakia",
+        "img": "/img/Slovakia.jpg",
+        "powerlevel": 18000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Bahrain",
+        "img": "/img/Bahrain.jpg",
+        "powerlevel": 18500000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Honduras",
+        "img": "/img/Honduras.jpg",
+        "powerlevel": 18000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Nicaragua",
+        "img": "/img/Nicaragua.jpg",
+        "powerlevel": 17500000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of El Salvador",
+        "img": "/img/El_Salvador.jpg",
+        "powerlevel": 17000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Cambodia",
+        "img": "/img/Cambodia.jpg",
+        "powerlevel": 16500000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Nepal",
+        "img": "/img/Nepal.jpg",
+        "powerlevel": 16000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Tajikistan",
+        "img": "/img/Tajikistan.jpg",
+        "powerlevel": 15500000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Kyrgyzstan",
+        "img": "/img/Kyrgyzstan.jpg",
+        "powerlevel": 15050000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Mongolia",
+        "img": "/img/Mongolia.jpg",
+        "powerlevel": 14500000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Albania",
+        "img": "/img/Albania.jpg",
+        "powerlevel": 14200000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Latvia",
+        "img": "/img/Latvia.jpg",
+        "powerlevel": 14050000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Estonia",
+        "img": "/img/Estonia.jpg",
+        "powerlevel": 14000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Cyprus",
+        "img": "/img/Cyprus.jpg",
+        "powerlevel": 13550000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Luxembourg",
+        "img": "/img/Luxembourg.jpg",
+        "powerlevel": 13400000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Malta",
+        "img": "/img/Malta.jpg",
+        "powerlevel": 13300000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Iceland",
+        "img": "/img/Iceland.jpg",
+        "powerlevel": 13200000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Montenegro",
+        "img": "/img/Montenegro.jpg",
+        "powerlevel": 13100000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Botswana",
+        "img": "/img/Botswana.jpg",
+        "powerlevel": 13050000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Namibia",
+        "img": "/img/Namibia.jpg",
+        "powerlevel": 13000000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Zimbabwe",
+        "img": "/img/Zimbabwe.jpg",
+        "powerlevel": 12900000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Mauritius",
+        "img": "/img/Mauritius.jpg",
+        "powerlevel": 12850000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Fiji",
+        "img": "/img/Fiji.jpg",
+        "powerlevel": 12800000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Papua New Guinea",
+        "img": "/img/Papua_New_Guinea.jpg",
+        "powerlevel": 12750000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Jamaica",
+        "img": "/img/Jamaica.jpg",
+        "powerlevel": 12700000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Bahamas",
+        "img": "/img/Bahamas.jpg",
+        "powerlevel": 12650000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Trinidad and Tobago",
+        "img": "/img/Trinidad_and_Tobago.jpg",
+        "powerlevel": 12600000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Barbados",
+        "img": "/img/Barbados.jpg",
+        "powerlevel": 12550000,
+        "type": "Countries"
+    },
+    {
+        "name": "The entire country of Belize",
+        "img": "/img/Belize.jpg",
+        "powerlevel": 12500000,
+        "type": "Countries"
+    },
 
 
 

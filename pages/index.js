@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import SettingsButton from "../components/SettingsButton.jsx";
 import BattleEngine from '../components/BattleEngine';
+import SkipButton from '../components/SkipButton';
 import { useState } from 'react';
 import StyleSettings from '../components/StyleSettings';
 
@@ -19,6 +20,13 @@ export default function Home() {
       {/* settings + engine: no extra wrapper */}
       <SettingsButton setAllowedTypes={setAllowedTypes} />
       <BattleEngine allowedTypes={allowedTypes} />
+
+      {/* Skip button - always visible in bottom-right */}
+      <SkipButton onClick={() => {
+        try {
+          if (typeof window?.nextBattle === 'function') window.nextBattle();
+        } catch (e) { console.error('Skip failed', e); }
+      }} />
 
       <div
         id="LeftSide"
@@ -40,3 +48,4 @@ export default function Home() {
     </div>
   );
 }
+
