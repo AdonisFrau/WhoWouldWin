@@ -21,7 +21,7 @@ export default function Home() {
   <>
     <Head>
       <title>Who Gonna Win? 🔥 | Battle & Vote Game</title>
-      <link rel="icon" href="public/favicon.png" />
+      <link rel="icon" href="/favicon.ico" />
       <meta
         name="description"
         content="Who Gonna Win lets you vote between two sides — anime, animals, celebs, countries and more! Fun AI-driven face-offs updated weekly."
