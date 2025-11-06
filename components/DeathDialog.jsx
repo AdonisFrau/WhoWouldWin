@@ -1,16 +1,15 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function DeathDialog() {
   const [open, setOpen] = useState(false);
+  const adRefTop = useRef(null);
+  const adRefBottom = useRef(null);
 
   useEffect(() => {
-    // expose global functions for testing from the browser console
+    // Expose global functions for triggering death dialog
     const openFn = () => setOpen(true);
-
-    // Named function
     window.Death = openFn;
-    // Allow calling from console using window["Im dead"]()
     window["Im dead"] = openFn;
 
     const onKey = (e) => {
@@ -19,16 +18,60 @@ export default function DeathDialog() {
     window.addEventListener("keydown", onKey);
 
     return () => {
-      // cleanup
       try {
         delete window.Death;
         delete window["Im dead"];
-      } catch (err) {
-        // ignore if running in strict environments
-      }
+      } catch {}
       window.removeEventListener("keydown", onKey);
     };
   }, []);
+
+  // Reload ads when dialog opens
+  useEffect(() => {
+    if (open) {
+      try {
+        // Safely recreate <ins> elements and initialize only uninitialized ones
+        const createAd = (container, slot) => {
+          if (!container) return null;
+          // remove previous ad markup
+          container.innerHTML = "";
+          const ins = document.createElement("ins");
+          ins.className = "adsbygoogle";
+          ins.style.display = "block";
+          ins.setAttribute("data-ad-client", "ca-pub-6868719082124854");
+          ins.setAttribute("data-ad-slot", slot);
+          ins.setAttribute("data-ad-format", "auto");
+          ins.setAttribute("data-full-width-responsive", "true");
+          container.appendChild(ins);
+          return ins;
+        };
+
+        const topIns = createAd(adRefTop.current, "9642253588");
+        const bottomIns = createAd(adRefBottom.current, "9642253588");
+
+        if (window.adsbygoogle && typeof window.adsbygoogle.push === "function") {
+          // push separately and only for elements that aren't already initialized
+          try {
+            if (topIns && !topIns.getAttribute("data-adsbygoogle-status")) {
+              window.adsbygoogle.push({});
+            }
+          } catch (e) {
+            console.warn("Top ad push failed:", e);
+          }
+
+          try {
+            if (bottomIns && !bottomIns.getAttribute("data-adsbygoogle-status")) {
+              window.adsbygoogle.push({});
+            }
+          } catch (e) {
+            console.warn("Bottom ad push failed:", e);
+          }
+        }
+      } catch (err) {
+        console.error("Ad reload error:", err);
+      }
+    }
+  }, [open]);
 
   if (!open) return null;
 
@@ -39,16 +82,25 @@ export default function DeathDialog() {
       className="fixed inset-0 z-50 flex items-center justify-center"
     >
       {/* backdrop */}
-      <div
-        onClick={() => setOpen(false)}
-        className="absolute inset-0 bg-black/70"
-      />
+      <div onClick={() => setOpen(false)} className="absolute inset-0 bg-black/70" />
 
       {/* panel */}
       <div className="relative mx-4 w-full max-w-lg rounded-lg bg-gray-900 ring-1 ring-white/10">
-        <div className="px-6 py-6">
+        <div className="px-6 py-6 space-y-4">
+          {/* TOP AD */}
+          <div ref={adRefTop}>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-6868719082124854"
+              data-ad-slot="9642253588"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
+
+          {/* dialog content */}
           <div className="flex items-start gap-4">
-            {/* simple inline icon (no extra deps) */}
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600/10">
               <svg className="h-6 w-6 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4" />
@@ -60,21 +112,31 @@ export default function DeathDialog() {
             <div>
               <h3 className="text-lg font-semibold text-white">You Died</h3>
               <p className="mt-2 text-sm text-gray-300">
-                You picked the wrong side, the opponent was way stromnger than your pick. Try again!
+                You picked the wrong side, the opponent was way stronger than your pick. Try again!
               </p>
             </div>
+          </div>
+
+          {/* BOTTOM AD */}
+          <div ref={adRefBottom}>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-6868719082124854"
+              data-ad-slot="9642253588"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
           </div>
         </div>
 
         <div className="flex gap-3 border-t border-white/5 px-4 py-3">
           <button
             onClick={() => {
-              // Close dialog and trigger next battle if available
               setOpen(false);
               if (typeof window.nextBattle === 'function') {
                 try { window.nextBattle(); } catch (e) { console.error(e); }
               }
-              // placeholder for respawn logic
             }}
             className="ml-auto inline-flex items-center rounded bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400"
           >
