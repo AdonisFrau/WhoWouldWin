@@ -24,5 +24,5 @@ const SkipButton = ({ onClick }) => {
     </button>
   );
 };
-
+//exports
 export default SkipButton;
