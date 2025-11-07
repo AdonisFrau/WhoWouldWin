@@ -79,14 +79,14 @@ export default function DeathDialog() {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
     >
       {/* backdrop */}
       <div onClick={() => setOpen(false)} className="absolute inset-0 bg-black/70" />
 
       {/* panel */}
-      <div className="relative mx-4 w-full max-w-lg rounded-lg bg-gray-900 ring-1 ring-white/10">
-        <div className="px-6 py-6 space-y-4">
+      <div className="relative mx-4 w-full max-w-lg rounded-lg bg-gray-900 ring-1 ring-white/10 max-h-[95vh] flex flex-col">
+        <div className="px-6 py-6 space-y-4 overflow-y-auto flex-1">
           {/* TOP AD */}
           <div ref={adRefTop}>
             <ins
@@ -130,7 +130,7 @@ export default function DeathDialog() {
           </div>
         </div>
 
-        <div className="flex gap-3 border-t border-white/5 px-4 py-3">
+        <div className="flex gap-3 border-t border-white/5 px-4 py-3 mt-auto bg-gray-900 sticky bottom-0">
           <button
             onClick={() => {
               setOpen(false);
